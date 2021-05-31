@@ -1,1 +1,2 @@
-export const handleHome = (req, res) => res.render("home"); 
+//--------------------< Get Home >--------------------
+export const getHome = (req, res) => res.render("home"); 
