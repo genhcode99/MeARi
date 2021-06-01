@@ -4,9 +4,13 @@ const app = express();
 
 
 //--------------------< Import >--------------------
+// # router
 import rootRouter from "./router/rootRouter";
 import userRouter from "./router/userRouter";
-import lectureRouter from "./router/lectureRouter";
+import courseRouter from "./router/courseRouter";
+
+// # middle ware
+import logger from "morgan";
 
 
 //--------------------< Pug >--------------------
@@ -17,10 +21,18 @@ app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 
 
+//--------------------< Middle ware >--------------------
+app.use(logger("dev"));
+
+
+//--------------------< Guide Folder>--------------------
+app.use("/uploads", express.static("uploads"));
+
+
 //--------------------< Router >--------------------
 app.use("/", rootRouter);
 app.use("/users", userRouter);
-app.use("/lecture", lectureRouter);
+app.use("/course", courseRouter);
 
 
 //--------------------< Express Export >--------------------

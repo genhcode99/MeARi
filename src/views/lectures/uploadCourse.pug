@@ -1,0 +1,15 @@
+extends ../base
+
+block main 
+  div 
+    form(method="POST", enctype="multipart/form-data")
+      div 
+        label Title
+        input(type="text", name="title")
+      div 
+        label Thumbnail 
+        input(type="file", name="thumbnail", accept="image/*", required, id="thumbnail")
+      div 
+        label Description
+        input(type="text", name="description", required)
+      input(type="submit", value="Upload")
