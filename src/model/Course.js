@@ -10,6 +10,8 @@ const courseSchema = new mongoose.Schema({
 
   echo: [{type: mongoose.Schema.Types.ObjectId, ref:""}],
 
+  createdAt:{type: Date, required: true, default: Date.now }
+
 });
 
 const Course = mongoose.model("Course", courseSchema);
