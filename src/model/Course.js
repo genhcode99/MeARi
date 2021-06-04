@@ -8,7 +8,7 @@ const courseSchema = new mongoose.Schema({
 
   description: {type: String, required: true},
 
-  echo: [{type: mongoose.Schema.Types.ObjectId, ref:""}],
+  echos: [{type: mongoose.Schema.Types.ObjectId, ref:"Echo"}],
 
   createdAt:{type: Date, required: true, default: Date.now }
 

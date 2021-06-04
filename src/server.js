@@ -23,6 +23,8 @@ app.set("views", process.cwd() + "/src/views");
 
 //--------------------< Middle ware >--------------------
 app.use(logger("dev"));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 
 //--------------------< Guide Folder>--------------------

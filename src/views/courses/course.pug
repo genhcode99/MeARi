@@ -1,5 +1,10 @@
 extends ../base
+include ../mixins/Echo
 
-block main 
- h3 here is course
- h3 course have to get echo upload
+block main
+  div
+    a(href=`/course/${course._id}/uploadecho`) Upload Echo
+  div 
+    each echo in echos
+      +echo(echo)
+  
