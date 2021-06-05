@@ -5,11 +5,11 @@ const meariSchema = new mongoose.Schema({
 
   koText : {type: String},
 
-  koVoice : {type: String},
+  koVoiceUrl : {type: String},
 
   enText : {type: String},
 
-  enVoice : {type: String}
+  enVoiceUrl : {type: String}
 });
 
 const Meari = mongoose.model("Meari", meariSchema);

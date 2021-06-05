@@ -1,7 +1,7 @@
 import express from "express";
 
 //--------------------< Import >--------------------
-import { thumbnailUpload } from "../middlewares"
+import { thumbnailUpload, voiceUpload } from "../middlewares"
 import {
   getCourse,
   getCourseMain,
@@ -9,7 +9,9 @@ import {
   postUploadCourse,
   getUploadEcho,
   postUploadEcho,
-  getEcho
+  getEcho,
+  getUploadMeari,
+  postUploadMeari
 } from "../controllers/courseController";
 
 
@@ -42,5 +44,10 @@ courseRouter
   .get(getUploadEcho)
   .post(postUploadEcho);
 
+//--------------------< Upload MeARi >--------------------
+courseRouter
+  .route("/echo/:id([0-9a-f]{24})/upload-meari")
+  .get(getUploadMeari)
+  .post(voiceUpload.fields([{name: "koVoice"},{name: "enVoice"}]) ,postUploadMeari)
 
 export default courseRouter;

@@ -4,8 +4,9 @@ import multer from "multer";
 //--------------------< Multer >--------------------
 // # thumbnail
 export const thumbnailUpload = multer({
-  dest: "uploads/thumbnail",
-  limits: {
-    fileSize: 4000000,
-  }
+  dest: "uploads/thumbnail"
 })
+
+export const voiceUpload = multer({
+  dest: "uploads/voices"
+});

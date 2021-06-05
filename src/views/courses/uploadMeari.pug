@@ -1,0 +1,14 @@
+extends ../base
+
+block main 
+  div.uploadMeari__container
+    form(method="post", enctype="multipart/form-data")
+      label Korean
+      input(type="text", name="koText", required)
+      label Korean Voice
+      input(type="file", name="koVoice", id="koVoice", accept="audio/*", required)
+      label English
+      input(type="text", name="enText", required)
+      label English Voice
+      input(type="file", name="enVoice", id="enVoice", accept="audio/*", required) 
+      input(type="submit")
