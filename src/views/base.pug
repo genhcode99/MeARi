@@ -10,6 +10,8 @@ head
   link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css")
 
 body
+  if messages.notice
+    span=messages.notice
   header
     include partials/header
   main 

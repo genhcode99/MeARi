@@ -1,5 +1,7 @@
 extends ../base
 
 block main 
-  div.echo__container
-    a(href=`/course/echo/${id}/upload-meari`) Upload MeARi
+  if loggedIn 
+    if loggedInUser.manager
+      div.echo__container
+        a(href=`/course/echo/${id}/upload-meari`) Upload MeARi

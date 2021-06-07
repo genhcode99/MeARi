@@ -2,8 +2,10 @@ extends ../base
 include ../mixins/Echo
 
 block main
-  div
-    a(href=`/course/${course._id}/uploadecho`) Upload Echo
+  if loggedIn
+    if loggedInUser.manager
+    div
+      a(href=`/course/${course._id}/uploadecho`) Upload Echo
   div 
     each echo in echos
       +echo(echo)

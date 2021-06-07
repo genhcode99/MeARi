@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const meariSchema = new mongoose.Schema({
   echo : {type: mongoose.Schema.Types.ObjectId, ref:"Echo"},
 
-  koText : {type: String},
+  koText : {type: String, required: true},
 
-  koVoiceUrl : {type: String},
+  koVoiceUrl : {type: String, required: true},
 
-  enText : {type: String},
+  enText : {type: String, required: true},
 
-  enVoiceUrl : {type: String}
+  enVoiceUrl : {type: String, required: true}
 });
 
 const Meari = mongoose.model("Meari", meariSchema);

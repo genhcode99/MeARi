@@ -1,7 +1,11 @@
 extends ../base
 include ../mixins/Course
 
-block main 
+block main
+  if loggedIn
+    if loggedInUser.manager
+      li 
+        a(href="/course/upload-course") Upload Course
   each course in courses 
    +course(course)
   else 

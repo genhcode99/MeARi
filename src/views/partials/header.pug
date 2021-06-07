@@ -4,8 +4,20 @@ nav
       a(href="/").fab.fa-cc-visa
     li 
       a(href="/course") Course
-    li 
-      a(href="/course/upload-course") Upload Course
-    li 
-      a(href="/users/1234").fas.fa-user-circle  User Name
+    if !loggedIn
+      li 
+        a(href="/users/join") Join
+      li 
+        a(href="/users/login") Log In 
+      li 
+        a(href=`/users/login`).fas.fa-user-circle  User Name
+
+    if loggedIn
+      li 
+        a(href="/users/logout") Log Out
+      li 
+        a(href=`/users/${loggedInUser._id}`).fas.fa-user-circle  User Name
+      
+      
+
         
