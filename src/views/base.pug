@@ -3,19 +3,24 @@ html(lang="en")
 
 head
   meta(charset="UTF-8")
-  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1")
   title MeARi
-  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css")
-  link(rel="stylesheet", href="https://unpkg.com/mvp.css")
-  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css")
+  link(rel="preconnect" href="https://fonts.gstatic.com")
+  link(href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+  link(rel="stylesheet", href="/assets/css/styles.css")
 
 body
-  if messages.notice
-    span=messages.notice
-  header
-    include partials/header
-  main 
-    block main
+  div(style="background-image: url(/images/gwanghwamun/gwanghwamun-large.jpeg);").body__container
+    div.header__container
+      div.message__container
+        if messages.notice
+          span.notice-message=messages.notice   
+      include partials/header
+    main
+      block main
+script(src="/assets/js/main.js")
+block script
   
 
   

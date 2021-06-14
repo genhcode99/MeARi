@@ -38,7 +38,8 @@ app.use(localMiddleware);
 
 //--------------------< Guide Folder>--------------------
 app.use("/uploads", express.static("uploads"));
-
+app.use("/assets", express.static("assets"))
+app.use("/images", express.static("images"))
 
 //--------------------< Router >--------------------
 app.use("/", rootRouter);

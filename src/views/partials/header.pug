@@ -1,23 +1,31 @@
-nav 
-  ul 
-    li 
-      a(href="/").fab.fa-cc-visa
-    li 
-      a(href="/course") Course
-    if !loggedIn
-      li 
-        a(href="/users/join") Join
-      li 
-        a(href="/users/login") Log In 
-      li 
-        a(href=`/users/login`).fas.fa-user-circle  User Name
-
+header.header
+  div.menu-left
+    a(href="/")
+      img(src="/images/logo.png", alt="home" style="width: 40px; height: 40px;")
+      span MeAri
+    a(href="/course").menu-course Course
     if loggedIn
-      li 
-        a(href="/users/logout") Log Out
-      li 
-        a(href=`/users/${loggedInUser._id}`).fas.fa-user-circle  User Name
+        if loggedInUser.manager 
+          a(href="/course/upload-course").upload-course-btn Upload Course
+  nav.menu-right
+    ul.handle-showing.on
+      if !loggedIn
+        li 
+          a(href="/users/join").join Join
+        li 
+          a(href="/users/login") Log In 
+        li 
+          a(href=`/users/login`).fas.fa-user-circle  User Name
       
-      
+      if loggedIn
+        li 
+          a(href="/users/logout") Log Out
+        li 
+          a(href=`/users/${loggedInUser._id}`).fas.fa-user-circle User Name
 
+block script 
+  script(src="/assets/js/menu.js")
         
+          
+
+          

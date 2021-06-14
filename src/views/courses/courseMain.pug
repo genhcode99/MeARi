@@ -1,12 +1,13 @@
 extends ../base
-include ../mixins/Course
 
 block main
-  if loggedIn
-    if loggedInUser.manager
-      li 
-        a(href="/course/upload-course") Upload Course
-  each course in courses 
-   +course(course)
-  else 
-    span Upload Course
+  div.course-main__container
+    each course in courses
+      a(href=`/course/${course._id}`)
+        div.course
+          img(src=course.thumbnailUrl, alt=course.title)
+          div.course__text
+            h1=course.title
+            span=course.description
+           
+              

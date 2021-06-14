@@ -1,1 +1,368 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+  color: white;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.off {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__container {
+  margin: 0 auto;
+  width: 90%;
+  height: 15%;
+}
+@keyframes message {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+.header__container .message__container {
+  height: 40%;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  animation: message 0.5s ease-in-out forwards;
+  animation-delay: 5s;
+}
+.header__container .header {
+  display: flex;
+  height: 60%;
+  padding-bottom: 20px;
+  justify-content: space-between;
+}
+.header__container .header .menu-left {
+  display: flex;
+  align-items: flex-end;
+}
+.header__container .header .menu-left :not(:last-child) {
+  margin-right: 10px;
+}
+.header__container .header .menu-left a {
+  display: flex;
+  align-items: flex-end;
+}
+.header__container .header .menu-left .off {
+  display: none;
+}
+.header__container .header .menu-right {
+  display: flex;
+  align-items: flex-end;
+}
+.header__container .header .menu-right ul {
+  display: flex;
+  align-items: flex-end;
+}
+.header__container .header .menu-right ul :not(:first-child) {
+  margin-left: 10px;
+}
+
+.home__container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.home__container div:first-child {
+  margin-bottom: 50px;
+}
+.home__container div:first-child h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.home__container div:first-child p {
+  font-size: 18px;
+}
+.home__container div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+.home__container div:last-child span {
+  font-size: 18px;
+}
+.home__container div:last-child a {
+  display: flex;
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: rgba(52, 152, 219, 0.5);
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  box-shadow: black 1px 1px 1px;
+}
+
+.course-main__container {
+  width: 100%;
+  height: 93%;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 30px;
+}
+.course-main__container::-webkit-scrollbar {
+  background-color: rgba(225, 225, 225, 0);
+  width: 13px;
+}
+.course-main__container::-webkit-scrollbar-thumb {
+  background-color: #ecf0f1;
+  border-radius: 9999px;
+}
+.course-main__container::-moz-scrollbar {
+  background-color: rgba(225, 225, 225, 0);
+  width: 10px;
+}
+.course-main__container::-moz-scrollbar-thumb {
+  background-color: #ecf0f1;
+  border-radius: 9999px;
+}
+.course-main__container::-o-scrollbar {
+  background-color: rgba(225, 225, 225, 0);
+  width: 10px;
+}
+.course-main__container::-o-scrollbar-thumb {
+  background-color: #ecf0f1;
+  border-radius: 9999px;
+}
+
+.course {
+  position: relative;
+  width: 180px;
+  height: 290px;
+}
+.course img {
+  width: 180px;
+  height: 290px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.course .course__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 180px;
+  height: 290px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: background-color 0.2s, opacity 0.2s linear;
+}
+.course .course__text:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+.course .course__text h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.course .course__text span {
+  font-size: 16px;
+  word-break: break-all;
+}
+
+.course__container {
+  display: flex;
+  width: 100%;
+  height: 93%;
+}
+.course__container .course-left {
+  width: 250px;
+  height: 100%;
+  margin-right: 20px;
+}
+.course__container .course-left img {
+  border-radius: 10px;
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+}
+.course__container .course-left h1 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.course__container .course-left span {
+  font-size: 16px;
+}
+.course__container .course-left a {
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(52, 152, 219, 0.5);
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  box-shadow: black 1px 1px 1px;
+}
+.course__container .course-right {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.course__container .course-right::-webkit-scrollbar {
+  background-color: rgba(225, 225, 225, 0);
+  width: 13px;
+}
+.course__container .course-right::-webkit-scrollbar-thumb {
+  background-color: #ecf0f1;
+  border-radius: 9999px;
+}
+.course__container .course-right::-moz-scrollbar {
+  background-color: rgba(225, 225, 225, 0);
+  width: 10px;
+}
+.course__container .course-right::-moz-scrollbar-thumb {
+  background-color: #ecf0f1;
+  border-radius: 9999px;
+}
+.course__container .course-right::-o-scrollbar {
+  background-color: rgba(225, 225, 225, 0);
+  width: 10px;
+}
+.course__container .course-right::-o-scrollbar-thumb {
+  background-color: #ecf0f1;
+  border-radius: 9999px;
+}
+.course__container .course-right .course-right__echo {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(189, 195, 199, 0.8));
+  align-items: center;
+  font-size: 20px;
+  word-break: break-all;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+.course__container .course-right .course-right__echo a {
+  text-shadow: none;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .course__container {
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+  }
+  .course__container::-webkit-scrollbar {
+    background-color: rgba(225, 225, 225, 0);
+    width: 13px;
+  }
+  .course__container::-webkit-scrollbar-thumb {
+    background-color: #ecf0f1;
+    border-radius: 9999px;
+  }
+  .course__container::-moz-scrollbar {
+    background-color: rgba(225, 225, 225, 0);
+    width: 10px;
+  }
+  .course__container::-moz-scrollbar-thumb {
+    background-color: #ecf0f1;
+    border-radius: 9999px;
+  }
+  .course__container::-o-scrollbar {
+    background-color: rgba(225, 225, 225, 0);
+    width: 10px;
+  }
+  .course__container::-o-scrollbar-thumb {
+    background-color: #ecf0f1;
+    border-radius: 9999px;
+  }
+  .course__container .course-left {
+    display: none;
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #DAE5E9;
+  position: relative;
+}
+
+.body__container {
+  box-shadow: 5px 5px 50px 3px black;
+  border-radius: 25px;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  max-width: 1100px;
+  max-height: 700px;
+  position: relative;
+}
+
+main {
+  display: block;
+  width: 90%;
+  height: 85%;
+  margin: 0 auto;
+  text-shadow: black 2px 2px 2px;
+}

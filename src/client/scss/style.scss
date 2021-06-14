@@ -1,0 +1,43 @@
+//config
+@import "./config/reset.css";
+
+//components
+@import "./components/shared.scss";
+@import "./components/header.scss";
+
+//screens
+@import "./screens/home.scss";
+@import "./screens/courseMain.scss";
+@import "./screens/course.scss";
+
+//--------------------< base.pug >--------------------
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #DAE5E9;
+  position: relative;
+}
+
+.body__container {
+  box-shadow: 5px 5px 50px 3px black;
+  border-radius: 25px;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  max-width: 1100px;
+  max-height: 700px;
+  position: relative;
+}
+
+main {
+  display: block;
+  width: 90%;
+  height: 85%;
+  margin: 0 auto;
+  text-shadow: black 2px 2px 2px;
+}

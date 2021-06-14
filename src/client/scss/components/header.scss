@@ -1,0 +1,61 @@
+.header__container {
+  margin: 0 auto;
+  width: 90%;
+  height: 15%;
+
+  @keyframes message {
+    from{
+      transform: none;
+      opacity: 1;
+    }
+    to{
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  }
+
+  .message__container{
+    height: 40%;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    animation: message .5s ease-in-out forwards;
+    animation-delay: 5s;
+  }
+  .header {
+    display: flex;
+    height: 60%;
+    padding-bottom: 20px;
+    justify-content: space-between;
+
+    .menu-left {
+      display: flex;
+      align-items: flex-end;
+
+      :not(:last-child){
+        margin-right: 10px;
+      }
+
+      a {
+        display: flex;
+        align-items: flex-end;
+      }
+      .off{
+        display: none;
+      }
+    }
+
+    .menu-right {
+      display: flex;
+      align-items: flex-end;
+
+      ul{
+        display: flex;
+        align-items: flex-end;
+        :not(:first-child) {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

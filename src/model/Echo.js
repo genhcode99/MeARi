@@ -7,7 +7,7 @@ const echoSchema = new mongoose.Schema({
 
   meari : [{type: mongoose.Schema.Types.ObjectId, ref:"Meari"}],
 
-  createdAt :{ type: Date, required: true, default:Date.now } 
+  createdAt :{ type: Date, required: true, default:Date.now }
 
 });
 

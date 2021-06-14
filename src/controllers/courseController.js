@@ -31,7 +31,7 @@ export const postUploadCourse = async (req, res) => {
     const newCourse = await Course.create({
       title,
       description,
-      thumbnailUrl : thumbnail.path
+      thumbnailUrl : "/"+thumbnail.path
     });
     return res.redirect("/course");
   } catch(error) {
