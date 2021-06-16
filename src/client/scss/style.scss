@@ -1,43 +1,41 @@
-//config
-@import "./config/reset.css";
+// # Config
+@import './config/reset.scss';
 
-//components
-@import "./components/shared.scss";
-@import "./components/header.scss";
 
-//screens
-@import "./screens/home.scss";
-@import "./screens/courseMain.scss";
-@import "./screens/course.scss";
+// # Components
+@import './components/header.scss';
 
-//--------------------< base.pug >--------------------
-body {
+
+// # Screens
+
+// # World Previous
+*{
+  box-sizing: border-box;
+  font-weight: 300;
+  text-decoration: none;
+  color: black;
+  list-style: none;
+}
+
+
+// # Base 
+body{
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #DAE5E9;
-  position: relative;
+
 }
 
-.body__container {
-  box-shadow: 5px 5px 50px 3px black;
-  border-radius: 25px;
-  background-position: center;
-  background-size: cover;
-  display: block;
-  width: 90%;
-  height: 90%;
-  margin: 0 auto;
-  max-width: 1100px;
-  max-height: 700px;
+.body-ratio {
   position: relative;
+  padding-top: 62%;
+  width: 100%;
+  background-color: red;
 }
 
-main {
-  display: block;
-  width: 90%;
-  height: 85%;
-  margin: 0 auto;
-  text-shadow: black 2px 2px 2px;
+.body__container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
 }
