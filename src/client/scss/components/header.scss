@@ -1,55 +1,62 @@
-.header{
-  background-color: skyblue;
-}
-.menu__container{
+.menu__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
   height: 60px;
-  background-color: blue;
+  background-color: white;
+  box-shadow: 0 1px 4px black;
   font-size: 22px;
+  z-index: 12;
 }
-.menu-left{
-  :first-child{
+.menu-left {
+  :first-child {
     display: flex;
-    :not(:first-child){
+    :not(:first-child) {
       margin-left: 10px;
     }
-    li{
+    li {
       display: flex;
       align-items: center;
     }
   }
-  .vertical-menu{
+  .vertical-menu {
     position: absolute;
     top: 60px;
     left: 0;
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 10px;
     width: 240px;
-    height: 100%;
-    background-color: blue;
-    a{
+    height: calc(100% - 60px);
+    background-color: #ecf0f1;
+    z-index: 10;
+    a {
       display: block;
       width: 100%;
       border-bottom: 1px solid black;
     }
   }
-  .off{
+  .off {
     display: none;
   }
 }
 
-.fa-bars{
+.fa-bars {
   font-size: 20px;
+  color: #7f8c8d;
+  z-index: 10;
 }
 
-
-.menu-right{
+.menu-right {
   display: flex;
-  :not(:last-child){
+  :not(:last-child) {
     margin-right: 10px;
   }
+}
+.fa-bell {
+  color: #7f8c8d;
+}
+.fa-user-circle {
+  color: #7f8c8d;
 }
