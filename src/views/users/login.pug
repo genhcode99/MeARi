@@ -1,12 +1,12 @@
 extends ../base
 
 block main 
-  div
-    form(method="post")
-      div
-        label(for="email") Email
-        input(type="email", name="email", id="email", required)
-      div
-        label(for="password") Password 
-        input(type="password", name="password", id="password", required)
-      input(type="submit", value="Log In")
+  div.login__container
+    div.login__inner
+      h1.login__title Log In
+      form(method="post").login__form
+        input(type="email", placeholder="E-mail" name="email", id="email", required)
+        input(type="password", placeholder="Password" name="password", id="password", required)
+        button(type="submit") Log In
+      a.login__btn-signUp(href="/users/join")
+        span Join

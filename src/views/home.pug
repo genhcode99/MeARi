@@ -1,11 +1,13 @@
 extends base
+include mixins/Course
 
 block main 
   div.home__container
-    div
-      h1 MeAri 
-      p This site was created to teach Korean for free.
-    div
-      span Press the button to start your course.
-      a(href="/course")
-        span Course
+    h2 Courses
+    p Let's learn Korean easily and interestingly.
+    div.course__container
+      each course in courses 
+        +Course(course)
+      else 
+        span.empty-message Can't find Course
+    hr

@@ -1,15 +1,4 @@
-// # Config
-@import './config/reset.scss';
-
-
-// # Components
-@import './components/header.scss';
-
-
-// # Screens
-
-// # World Previous
-*{
+* {
   box-sizing: border-box;
   font-weight: 300;
   text-decoration: none;
@@ -17,21 +6,18 @@
   list-style: none;
 }
 
-
-// # Base 
-body{
+body {
   display: flex;
   align-items: center;
-
 }
 
-.body__container{
+.body__container {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-.cover{
+.cover {
   position: absolute;
   top: 60px;
   left: 0;
@@ -40,7 +26,19 @@ body{
   z-index: -9999;
 }
 
-.shadow{
+.shadow {
   z-index: 5;
-  background-color: rgba(black, 0.5);
+  background-color: rgba(black, 0.6);
 }
+
+// # Config
+@import './config/reset.scss';
+
+// # Screens
+@import './screens/home.scss';
+@import './screens/login.scss';
+@import './screens/join.scss'; // # Components
+@import './components/Header.scss';
+@import './components/Coures.scss';
+
+// # Base

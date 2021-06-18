@@ -3,17 +3,5 @@ extends ../base
 
 block main
   div.course__container
-    div.course-left
-      img(src=course.thumbnailUrl, alt=course.title)
-      h1=course.title
-      span=course.description
-        if loggedIn
-          if loggedInUser.manager
-            a(href=`/course/${course._id}/uploadecho`).upload-echo-btn Upload Echo
-    div.course-right
-      each echo in echos
-        div.course-right__echo
-          a(href=`/course/echo/${echo._id}`)=echo.title 
-          
               
       

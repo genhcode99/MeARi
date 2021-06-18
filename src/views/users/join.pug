@@ -1,24 +1,18 @@
 extends ../base
 
 block main
-  div 
-    form(method="Post")
-      div
+  div.join__container
+    div.join__inner
+      h2.join__title Join
+      form.join__form(method="Post")
         label(for="email") Email
-        input(type="email", name="email", id="email", required)
-        span Email is used when logging in.
-        span if there is same email in DB
-      div 
+        input(type="email", name="email", id="email", required) 
         label(for="username") User Name
-        input(type="text", name="username", id="username", required)
-      div 
+        input(type="text", name="username", id="username", required) 
         label(for="password") Password
         input(type="password", name="password", id="password", minlength="8", maxlength="20" required) 
-        span Please set the password from 8 to 20 characters.
-      div
         label(for="password2") Confirm Password
         input(type="password", name="password2", id="password2", minlength="8", maxlength="20" required)
-      div 
         label(for="country") Country
         select(name="country", id="country")
           option(value="") Choose your country
@@ -266,10 +260,9 @@ block main
           option(value="Yemen") Yemen
           option(value="Zambia") Zambia
           option(value="Zimbabwe") Zimbabwe
-      div 
         label Code
         input(type="text", name="code", id="code", maxlength="100")
         span If you have received any code from the manager, please write it down.
-      input(type="submit" value="Join")
+        button(type="submit") Join
 
 

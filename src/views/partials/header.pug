@@ -16,12 +16,8 @@ header.header
 
     nav.menu-right
       if !loggedIn
-        li
-          a(href="/users/join") Join
-        li
-          a(href="/users/login") Log In 
         li 
-          i.far.fa-bell
+          i.far.fa-envelope
         li 
           a(href=`/users/login`).fas.fa-user-circle
       
@@ -31,9 +27,8 @@ header.header
         li 
           a(href=`/users/${loggedInUser._id}`)=loggedInUser.username
   div.message__container
-    //if messages.notice
-    span.message Invalid password. Please check again.
-
+    if messages.notice
+      span.message=messages.notice
 block script 
   script(src="/assets/js/menu.js")
         

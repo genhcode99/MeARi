@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 20px;
   height: 60px;
   background-color: white;
-  box-shadow: 0 1px 4px black;
+  box-shadow: 0 1px 4px #7f8c8d;
   font-size: 22px;
   z-index: 12;
 }
@@ -13,11 +13,12 @@
   :first-child {
     display: flex;
     :not(:first-child) {
-      margin-left: 10px;
+      margin-left: 20px;
     }
     li {
       display: flex;
       align-items: center;
+      text-align: center;
     }
   }
   .vertical-menu {
@@ -35,6 +36,7 @@
       display: block;
       width: 100%;
       border-bottom: 1px solid black;
+      color: #7f8c8d;
     }
   }
   .off {
@@ -50,13 +52,41 @@
 
 .menu-right {
   display: flex;
+  align-items: center;
   :not(:last-child) {
-    margin-right: 10px;
+    margin-right: 20px;
   }
 }
-.fa-bell {
+.fa-envelope {
+  font-size: 24px;
   color: #7f8c8d;
 }
 .fa-user-circle {
+  font-size: 40px;
   color: #7f8c8d;
+}
+
+@keyframes Disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.message__container {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  .message {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #2ecc71;
+    animation: Disappear 0.5s ease-in-out forwards;
+    animation-delay: 5s;
+  }
 }

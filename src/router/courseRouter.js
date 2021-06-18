@@ -1,7 +1,7 @@
-import express from "express";
+import express from 'express'
 
 //--------------------< Import >--------------------
-import { thumbnailUpload, voiceUpload } from "../middlewares"
+import { thumbnailUpload, voiceUpload } from '../middlewares'
 import {
   getCourse,
   getCourseMain,
@@ -11,43 +11,36 @@ import {
   postUploadEcho,
   getEcho,
   getUploadMeari,
-  postUploadMeari
-} from "../controllers/courseController";
+  postUploadMeari,
+} from '../controllers/courseController'
 
-
-const courseRouter = express.Router();
-
-//--------------------< Course Main >--------------------
-courseRouter
-  .route("/")
-  .get(getCourseMain);
+const courseRouter = express.Router()
 
 //--------------------< Course >--------------------
-courseRouter
-  .route("/:id([0-9a-f]{24})")
-  .get(getCourse)
+courseRouter.route('/:id([0-9a-f]{24})').get(getCourse)
 
 //--------------------< Upload Cource>--------------------
 courseRouter
-  .route("/upload-course")
+  .route('/upload-course')
   .get(getUploadCourse)
-  .post(thumbnailUpload.single("thumbnail"), postUploadCourse);
+  .post(thumbnailUpload.single('thumbnail'), postUploadCourse)
 
 //--------------------< Echo >--------------------
-courseRouter
- .route("/echo/:id([0-9a-f]{24})")
- .get(getEcho);
+courseRouter.route('/echo/:id([0-9a-f]{24})').get(getEcho)
 
 //--------------------< Upload Echo >--------------------
 courseRouter
-  .route("/:id([0-9a-f]{24})/uploadecho")
+  .route('/:id([0-9a-f]{24})/uploadecho')
   .get(getUploadEcho)
-  .post(postUploadEcho);
+  .post(postUploadEcho)
 
 //--------------------< Upload MeARi >--------------------
 courseRouter
-  .route("/echo/:id([0-9a-f]{24})/upload-meari")
+  .route('/echo/:id([0-9a-f]{24})/upload-meari')
   .get(getUploadMeari)
-  .post(voiceUpload.fields([{name: "koVoice"},{name: "enVoice"}]) ,postUploadMeari)
+  .post(
+    voiceUpload.fields([{ name: 'koVoice' }, { name: 'enVoice' }]),
+    postUploadMeari,
+  )
 
-export default courseRouter;
+export default courseRouter
