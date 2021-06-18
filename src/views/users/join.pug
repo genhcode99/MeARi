@@ -13,6 +13,7 @@ block main
         input(type="password", name="password", id="password", minlength="8", maxlength="20" required) 
         label(for="password2") Confirm Password
         input(type="password", name="password2", id="password2", minlength="8", maxlength="20" required)
+        span.password-confirm
         label(for="country") Country
         select(name="country", id="country")
           option(value="") Choose your country
@@ -264,5 +265,6 @@ block main
         input(type="text", name="code", id="code", maxlength="100")
         span If you have received any code from the manager, please write it down.
         button(type="submit") Join
-
+block script
+  script(src="/assets/js/login.js")
 

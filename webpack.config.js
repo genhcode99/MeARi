@@ -5,7 +5,8 @@ const BASE_JS = "./src/client/js/"
 module.exports = {
   entry: {
     main: BASE_JS + "main.js",
-    menu: BASE_JS + "menu.js"
+    menu: BASE_JS + "menu.js",
+    login: BASE_JS + "join.js"
   },
   plugins: [new MCEP({
     filename: "css/styles.css",
