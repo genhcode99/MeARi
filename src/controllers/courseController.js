@@ -25,7 +25,7 @@ export const postUploadCourse = async (req, res) => {
       description,
       thumbnailUrl: '/' + thumbnail.path,
     })
-    return res.redirect('/course')
+    return res.redirect(`/course/${newCourse._id}`)
   } catch (error) {
     console.log('새로운 코스 만들기에 실패하였습니다.', error)
     return res.redirect('/')
@@ -45,15 +45,15 @@ export const getUploadEcho = async (req, res) => {
 }
 
 export const postUploadEcho = async (req, res) => {
-  const title = req.body.title
-  const cousreId = req.params.id
+  const { title } = req.body
+  const { id } = req.params
   const newEcho = await Echo.create({
     title,
   })
-  const course = await Course.findById(cousreId)
+  const course = await Course.findById(id)
   course.echos.push(newEcho._id)
   course.save()
-  return res.redirect(`/course/${cousreId}`)
+  return res.redirect(`/course/${id}`)
 }
 
 //--------------------< Upload MeARi >--------------------

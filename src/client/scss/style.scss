@@ -1,6 +1,8 @@
+// # Config
+@import './config/reset.scss';
+
 * {
   box-sizing: border-box;
-  font-weight: 300;
   text-decoration: none;
   color: black;
   list-style: none;
@@ -31,14 +33,14 @@ body {
   background-color: rgba(black, 0.6);
 }
 
-// # Config
-@import './config/reset.scss';
-
 // # Screens
 @import './screens/home.scss';
 @import './screens/login.scss';
-@import './screens/join.scss'; // # Components
+@import './screens/join.scss';
+@import './screens/course.scss';
+@import './screens/course.scss';
+
+// # Components
 @import './components/Header.scss';
-@import './components/Coures.scss';
 
 // # Base

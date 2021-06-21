@@ -1,13 +1,19 @@
 extends base
-include mixins/Course
 
 block main 
   div.home__container
     h2 Courses
     p Let's learn Korean easily and interestingly.
-    div.course__container
+    div.home__course__container
       each course in courses 
-        +Course(course)
+        div.home__course__inner
+          a(href=`/course/${course._id}`) 
+            img(src=course.thumbnailUrl, alt=course.title)
+          h3=course.title
+          if course.description.length > 45
+            p=course.description.substring(0,45) + "..."
+          else 
+            p=course.description
       else 
         span.empty-message Can't find Course
     hr

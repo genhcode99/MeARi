@@ -1,24 +1,40 @@
 .home__container {
   padding: 20px 60px 0 60px;
-  h2 {
+  > h2 {
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 10px;
   }
-  p {
+  > p {
     color: #7f8c8d;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 40px;
   }
-  .course__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    justify-content: space-between;
-    row-gap: 40px;
-  }
 }
-.empty-message {
-  font-size: 20px;
-  font-weight: 500px;
+
+.home__course__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.home__course__inner {
+  img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #7f8c8d;
+  }
+  > h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  > p {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #7f8c8d;
+    word-break: break-all;
+  }
 }

@@ -7,19 +7,7 @@ const courseSchema = new mongoose.Schema({
 
   description: { type: String, required: true },
 
-  echos: [
-    {
-      title: String,
-      mearis: [
-        {
-          koText: String,
-          koVoiceUrl: String,
-          enText: String,
-          enVoiceUrl: String,
-        },
-      ],
-    },
-  ],
+  echos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Echo' }],
 
   createdAt: { type: Date, required: true, default: Date.now },
 })

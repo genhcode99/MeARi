@@ -3,5 +3,17 @@ extends ../base
 
 block main
   div.course__container
-              
+    div.course__left
+      img(src=course.thumbnailUrl, alt="thumbail image")
+      h1=course.title
+      p=course.description
+      if loggedIn && loggedInUser.manager 
+        a(href=`/course/${course._id}/uploadecho`) Upload Echos
+    div.course__right
+      each echo,index in echos 
+        div
+          a.course__echo__index(href=`/course/echo/${echo._id}`)=`echo `+`${index+1}`
+          a.course__echo__title(href=`/course/echo/${echo._id}`)=echo.title
+          if loggedIn && loggedInUser.manager
+            a.course__echo__remove(href="##") Remove 
       
